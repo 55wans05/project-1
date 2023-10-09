@@ -1,5 +1,7 @@
 # UOCIS322 - Project 1 #
 
+Author: Stephen Swanson - sswanso5@uoregon.edu
+
 This project will get you started with creating a simple webpage server.
 
 ## Getting started
