@@ -198,6 +198,13 @@ def respond(sock):
 
     parts = request.split()
     if len(parts) > 1 and parts[0] == "GET":
+        if parts[1] == "/":
+            transmit(STATUS_OK, sock)
+            transmit(CAT, sock)
+            sock.shutdown(socket.SHUT_RDWR)
+            sock.close()
+            return
+
         filepath = f'{options.DOCROOT}{parts[1]}'
 
         # Directly catching bad characters like a noob
