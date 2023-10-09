@@ -230,7 +230,6 @@ def respond(sock):
             return
 
         # Check if the file exists
-        print(fullpath)
         if not os.path.exists(fullpath):
             transmit(STATUS_NOT_FOUND, sock)
             transmit(HTML_TYPE, sock)
@@ -240,7 +239,7 @@ def respond(sock):
             return
 
         # I'm not gonna check for permissions errors here,
-        # even though a proper webserver would
+        # even though a proper webserver would because I'm only making the MVP
         with open(fullpath, 'r') as file:
             contents = file.read()
         
